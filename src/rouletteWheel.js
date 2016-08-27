@@ -210,30 +210,13 @@ $.widget('javobyte.rouletteWheel', {
     // draw spin background img and spin text
     var spinImgWidth = this.options.spin_background.width;
     var spinImgHeigh = this.options.spin_background.height;
-    var textHeigh = 10;
-    var paddingHeigh = 40;
-    var totalHeigh = textHeigh + spinImgHeigh + paddingHeigh;
 
     ctx.drawImage(
       this.options.spin_background,
       cx - spinImgWidth / 2,
-      cy - (totalHeigh / 2),
+      cy - spinImgHeigh / 2,
       spinImgWidth,
       spinImgHeigh); 
-
-    var text = '';
-    if (!this.is_rotating()) {
-      text = this.options.spinText;
-    }
-    else{
-      text = this.options.spinningText;
-    }
-    ctx.font = 'bold 26pt Helvetica, Arial';
-    ctx.save();
-    ctx.fillText(text, cx - ctx.measureText(text).width / 2, cy - totalHeigh / 2 + spinImgHeigh + paddingHeigh);
-    ctx.restore();
-
-
   },
 
   _rotate: function () {

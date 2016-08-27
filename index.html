@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>轉盤遊戲</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<div class="htmleaf-container">
+		<div class="htmleaf-content bgcolor-3">
+			<canvas id="canvas" width="800" height="800">Your browser doesn't support</canvas>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="src/rouletteWheel.js"></script>
+	<script type="text/javascript">
+		$(function() {
+
+			var itemsToShow = 8;
+			console.log(itemsToShow);
+			var items = {};
+			items[0] = "三八阿花";
+			items[1] = "癡情玫瑰花";
+			items[2] = "屁股開花";
+			items[3] = "圓仔花";
+			items[4] = "004";
+			items[5] = "005";
+			items[6] = "006";
+			items[7] = "007";
+
+			$('#canvas').rouletteWheel({
+				items: items,
+				spinText: '遊戲開始',
+				spinningText: '進行中...',
+				colors: ['rgb(25,158,199)',
+				'rgb(64,188,134)',
+				'rgb(236,85,92)',
+				'rgb(252,180,16)',
+				'rgb(155,89,182)',
+				'rgb(255,106,0)',
+				'rgb(11,66,122)',
+				'rgb(136,112,255)'],
+			});
+
+		});
+	</script>
+</body>
+
+</html>
